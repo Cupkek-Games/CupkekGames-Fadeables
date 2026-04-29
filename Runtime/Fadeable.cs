@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections;
 
-namespace CupkekGames.Fadeable
+namespace CupkekGames.Fadeables
 {
   [Serializable]
   public class Fadeable

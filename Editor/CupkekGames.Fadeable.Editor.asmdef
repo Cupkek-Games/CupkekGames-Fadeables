@@ -1,6 +1,6 @@
 {
-    "name": "CupkekGames.Fadeable.Editor",
-    "rootNamespace": "CupkekGames.Fadeable.Editor",
+    "name": "CupkekGames.Fadeables.Editor",
+    "rootNamespace": "CupkekGames.Fadeables.Editor",
     "references": [
         "GUID:f8431b30fb844d5e90a7e9aa9b85b7fc"
     ],

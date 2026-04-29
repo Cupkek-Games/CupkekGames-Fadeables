@@ -1,7 +1,7 @@
 {
-  "name": "com.cupkekgames.fadeable",
-  "displayName": "CupkekGames Fadeable",
-  "version": "0.1.0",
+  "name": "com.cupkekgames.fadeables",
+  "displayName": "CupkekGames Fadeables",
+  "version": "0.1.1",
   "author": {
     "name": "CupkekGames",
     "url": "https://www.docs.cupkek.games"

@@ -1,6 +1,6 @@
 {
-    "name": "CupkekGames.Fadeable",
-    "rootNamespace": "CupkekGames.Fadeable",
+    "name": "CupkekGames.Fadeables",
+    "rootNamespace": "CupkekGames.Fadeables",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

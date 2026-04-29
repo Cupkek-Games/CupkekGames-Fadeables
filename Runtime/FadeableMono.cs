@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-namespace CupkekGames.Fadeable
+namespace CupkekGames.Fadeables
 {
   public enum FadeableAction
   {

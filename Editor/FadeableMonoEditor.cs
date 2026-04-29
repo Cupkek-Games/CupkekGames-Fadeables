@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 
-namespace CupkekGames.Fadeable.Editor
+namespace CupkekGames.Fadeables.Editor
 {
   [CustomEditor(typeof(FadeableMono), true)]
   public class FadeableMonoEditor : UnityEditor.Editor
