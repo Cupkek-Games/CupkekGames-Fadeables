@@ -1,0 +1,18 @@
+{
+    "name": "CupkekGames.Fadeable.Editor",
+    "rootNamespace": "CupkekGames.Fadeable.Editor",
+    "references": [
+        "GUID:f8431b30fb844d5e90a7e9aa9b85b7fc"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

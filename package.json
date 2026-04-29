@@ -1,0 +1,20 @@
+{
+  "name": "com.cupkekgames.fadeable",
+  "displayName": "CupkekGames Fadeable",
+  "version": "0.1.0",
+  "author": {
+    "name": "CupkekGames",
+    "url": "https://www.docs.cupkek.games"
+  },
+  "unity": "6000.0",
+  "documentationUrl": "https://docs.cupkek.games/",
+  "description": "Tween-based fade utilities: Fadeable<T>, FadeableMono, FadeableColor/Position/Scale, EasingType. Extracted from CupkekGames Core.",
+  "keywords": [
+    "Fadeable",
+    "Fade",
+    "Tween",
+    "Animation",
+    "CupkekGames"
+  ],
+  "dependencies": {}
+}
