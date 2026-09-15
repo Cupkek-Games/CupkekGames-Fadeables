@@ -57,7 +57,7 @@ namespace CupkekGames.Fadeables
       _value = value;
     }
 
-    private IEnumerator StartFade(float delay, float duration)
+    private IEnumerator StartFade(float delay, float duration, bool fromCurrent)
     {
       Kill();
 
@@ -81,6 +81,21 @@ namespace CupkekGames.Fadeables
         startValue = _out;
         endValue = _in;
         easingType = _easingIn;
+      }
+
+      // A fade interrupting a running fade continues from where the value is
+      // (a hover that returns mid fade-out grows back from the current width,
+      // no snap to the far end); the duration covers the distance left at the
+      // full fade's pace.
+      if (fromCurrent)
+      {
+        float full = Mathf.Abs(endValue - startValue);
+        if (full > Mathf.Epsilon)
+        {
+          duration *= Mathf.Clamp01(Mathf.Abs(endValue - _value) / full);
+        }
+
+        startValue = _value;
       }
 
       float time = 0f;
@@ -117,22 +132,24 @@ namespace CupkekGames.Fadeables
 
     public void FadeIn()
     {
+      bool fromCurrent = IsFading;
       Kill();
       OnFadeInStart?.Invoke();
 
       _reversed = false;
 
-      _fadeCoroutine = _parent.StartCoroutine(StartFade(_fadeInDelay, _fadeInDuration));
+      _fadeCoroutine = _parent.StartCoroutine(StartFade(_fadeInDelay, _fadeInDuration, fromCurrent));
     }
 
     public void FadeOut()
     {
+      bool fromCurrent = IsFading;
       Kill();
       OnFadeOutStart?.Invoke();
 
       _reversed = true;
 
-      _fadeCoroutine = _parent.StartCoroutine(StartFade(_fadeOutDelay, _fadeOutDuration));
+      _fadeCoroutine = _parent.StartCoroutine(StartFade(_fadeOutDelay, _fadeOutDuration, fromCurrent));
     }
 
     public void SetFadedIn()
