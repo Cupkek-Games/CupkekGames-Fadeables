@@ -138,6 +138,13 @@ namespace CupkekGames.Fadeables
 
       _reversed = false;
 
+      // An inactive object cannot run a coroutine: land on the end state.
+      if (!CanAnimate)
+      {
+        OnFadedIn();
+        return;
+      }
+
       _fadeCoroutine = _parent.StartCoroutine(StartFade(_fadeInDelay, _fadeInDuration, fromCurrent));
     }
 
@@ -149,8 +156,19 @@ namespace CupkekGames.Fadeables
 
       _reversed = true;
 
+      // An inactive object cannot run a coroutine: land on the end state.
+      if (!CanAnimate)
+      {
+        OnFadedOut();
+        return;
+      }
+
       _fadeCoroutine = _parent.StartCoroutine(StartFade(_fadeOutDelay, _fadeOutDuration, fromCurrent));
     }
+
+    // A fade animates through the parent's coroutine, which an inactive
+    // GameObject cannot start (e.g. a fade-out requested from OnDisable).
+    private bool CanAnimate => _parent != null && _parent.gameObject.activeInHierarchy;
 
     public void SetFadedIn()
     {
